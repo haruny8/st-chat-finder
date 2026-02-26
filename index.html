@@ -1,0 +1,56 @@
+<div class="inline-drawer">
+    <div class="inline-drawer-toggle inline-drawer-header">
+        <b>Chat Finder & Replacer</b>
+        <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+    </div>
+
+    <div class="inline-drawer-content" style="display: none;">
+        <div class="finder-settings">
+            
+            <!-- Find Section -->
+            <div class="finder-block">
+                <div class="finder-row">
+                    <label for="finder_input_search">Find text:</label>
+                    <input id="finder_input_search" class="text_pole" type="text" placeholder="Text to find..." />
+                </div>
+
+                <div class="finder-checkboxes">
+                    <label class="checkbox_label">
+                        <input id="finder_case_sensitive" type="checkbox" />
+                        Case sensitive
+                    </label>
+                    <label class="checkbox_label">
+                        <input id="finder_regex" type="checkbox" />
+                        Regex
+                    </label>
+                </div>
+
+                <div class="finder-controls">
+                    <div id="finder_btn_find" class="menu_button fa-solid fa-search" title="Find Matches"> Find</div>
+                    <div id="finder_btn_prev" class="menu_button fa-solid fa-arrow-up" title="Previous Match"></div>
+                    <div id="finder_btn_next" class="menu_button fa-solid fa-arrow-down" title="Next Match"></div>
+                </div>
+                
+                <div id="finder_status">0 matches found</div>
+            </div>
+
+            <!-- Replace Section -->
+            <div class="finder-block">
+                <div class="finder-row">
+                    <label for="finder_input_replace">Replace with:</label>
+                    <input id="finder_input_replace" class="text_pole" type="text" placeholder="Replacement text..." />
+                </div>
+
+                <div class="finder-controls">
+                    <div id="finder_btn_replace_one" class="menu_button" title="Replace current selected match">Replace Current</div>
+                    <div id="finder_btn_replace_all" class="menu_button" title="Replace all occurrences in chat">Replace All</div>
+                </div>
+            </div>
+
+            <hr class="sysHR" />
+            <div class="text_muted">
+                <small>Note: Replacements modify chat history permanently. A chat reload will happen automatically.</small>
+            </div>
+        </div>
+    </div>
+</div>

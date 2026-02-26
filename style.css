@@ -1,0 +1,55 @@
+/* Выделение сообщения, в котором найден текст */
+.finder-highlight-message {
+    border: 2px solid var(--SmartThemeQuoteColor) !important;
+    box-shadow: 0 0 10px var(--SmartThemeQuoteColor);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Блок настроек */
+.finder-block {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--SmartThemeBorderColor);
+    margin-bottom: 10px;
+}
+
+.finder-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.finder-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.finder-controls {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.finder-controls .menu_button {
+    flex-grow: 1;
+}
+
+#finder_status {
+    font-size: 0.9em;
+    opacity: 0.8;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+    min-height: 1.2em;
+}
+
+.finder-checkboxes {
+    display: flex;
+    gap: 15px;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
