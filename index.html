@@ -1,56 +1,79 @@
-<div class="inline-drawer">
-    <div class="inline-drawer-toggle inline-drawer-header">
-        <b>Chat Finder & Replacer</b>
-        <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
-    </div>
+<div id="finder_menu_item" class="finder-menu-item list-group-item flex-container flexGap5 interactable" tabindex="0" title="Chat Finder & Replacer">
+    <i class="fa-solid fa-magnifying-glass fa-fw"></i>
+    <span>Chat Finder & Replacer</span>
+</div>
 
-    <div class="inline-drawer-content" style="display: none;">
-        <div class="finder-settings">
-            
-            <!-- Find Section -->
-            <div class="finder-block">
-                <div class="finder-row">
-                    <label for="finder_input_search">Find text:</label>
-                    <input id="finder_input_search" class="text_pole" type="text" placeholder="Text to find..." />
-                </div>
+<section id="finder_panel" class="finder-panel" hidden aria-label="Chat Finder & Replacer">
+    <header id="finder_panel_header" class="finder-panel-header">
+        <span class="finder-panel-title"><i class="fa-solid fa-magnifying-glass"></i> Chat Finder</span>
+        <button id="finder_btn_close" class="menu_button menu_button_icon" type="button" title="Close" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </header>
 
-                <div class="finder-checkboxes">
-                    <label class="checkbox_label">
-                        <input id="finder_case_sensitive" type="checkbox" />
-                        Case sensitive
+    <div class="finder-panel-body">
+        <label class="finder-label" for="finder_input_search">Find text</label>
+        <div class="finder-input-wrap">
+            <input id="finder_input_search" class="text_pole" type="text" placeholder="Text to find..." autocomplete="off" />
+            <button id="finder_btn_clear_search" class="finder-clear-button" type="button" title="Clear find text" aria-label="Clear find text">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="finder-checkboxes">
+            <label class="checkbox_label">
+                <input id="finder_case_sensitive" type="checkbox" />
+                Case sensitive
+            </label>
+            <label class="checkbox_label">
+                <input id="finder_regex" type="checkbox" />
+                Regex
+            </label>
+        </div>
+
+            <div class="finder-range">
+                <label class="checkbox_label finder-range-toggle">
+                    <input id="finder_limit_range" type="checkbox" />
+                    Search message range
+                </label>
+                <div class="finder-range-fields">
+                    <label>
+                        From
+                        <input id="finder_range_from" class="text_pole" type="number" min="0" step="1" placeholder="0" disabled />
                     </label>
-                    <label class="checkbox_label">
-                        <input id="finder_regex" type="checkbox" />
-                        Regex
+                    <span aria-hidden="true">to</span>
+                    <label>
+                        To
+                        <input id="finder_range_to" class="text_pole" type="number" min="0" step="1" placeholder="last" disabled />
                     </label>
                 </div>
-
-                <div class="finder-controls">
-                    <div id="finder_btn_find" class="menu_button fa-solid fa-search" title="Find Matches"> Find</div>
-                    <div id="finder_btn_prev" class="menu_button fa-solid fa-arrow-up" title="Previous Match"></div>
-                    <div id="finder_btn_next" class="menu_button fa-solid fa-arrow-down" title="Next Match"></div>
-                </div>
-                
-                <div id="finder_status">0 matches found</div>
             </div>
 
-            <!-- Replace Section -->
-            <div class="finder-block">
-                <div class="finder-row">
-                    <label for="finder_input_replace">Replace with:</label>
-                    <input id="finder_input_replace" class="text_pole" type="text" placeholder="Replacement text..." />
-                </div>
+        <div class="finder-controls">
+            <button id="finder_btn_find" class="menu_button" type="button" title="Find Matches">
+                <i class="fa-solid fa-search"></i> Find
+            </button>
+            <button id="finder_btn_prev" class="menu_button menu_button_icon" type="button" title="Previous Match" aria-label="Previous Match">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+            <button id="finder_btn_next" class="menu_button menu_button_icon" type="button" title="Next Match" aria-label="Next Match">
+                <i class="fa-solid fa-arrow-down"></i>
+            </button>
+        </div>
 
-                <div class="finder-controls">
-                    <div id="finder_btn_replace_one" class="menu_button" title="Replace current selected match">Replace Current</div>
-                    <div id="finder_btn_replace_all" class="menu_button" title="Replace all occurrences in chat">Replace All</div>
-                </div>
-            </div>
+        <div id="finder_status" role="status">Type to highlight matches</div>
 
-            <hr class="sysHR" />
-            <div class="text_muted">
-                <small>Note: Replacements modify chat history permanently. A chat reload will happen automatically.</small>
-            </div>
+        <label class="finder-label" for="finder_input_replace">Replace with</label>
+        <div class="finder-input-wrap">
+            <input id="finder_input_replace" class="text_pole" type="text" placeholder="Replacement text..." autocomplete="off" />
+            <button id="finder_btn_clear_replace" class="finder-clear-button" type="button" title="Clear replacement text" aria-label="Clear replacement text">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="finder-controls finder-replace-controls">
+            <button id="finder_btn_replace_one" class="menu_button" type="button" title="Replace current selected match">Replace Current</button>
+            <button id="finder_btn_replace_all" class="menu_button" type="button" title="Replace all occurrences in chat">Replace All</button>
         </div>
     </div>
-</div>
+</section>
